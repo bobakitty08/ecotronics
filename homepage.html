@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EcoTronics - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Home Page Section -->
+    <!-- Home Page Section (hidden initially) -->
+    <div class="homepage" id="homepage" style="display: none;">
+        <header>
+            <h1 class="maven-pro-header">Welcome to EcoTronics!</h1>
+            <p class="maven-pro-header">Start your eco-friendly journey right here with us!</p>
+        </header>
+
+        <!-- Image Carousel -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="app1.png" class="carousel-image" style="display: none;">
+                <img src="app2.jpg" class="carousel-image" style="display: none;">
+                <img src="app3.jpg" class="carousel-image" style="display: none;">
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Compartment Section -->
+        <div class="compartments">
+            <div class="compartment maven-pro-header">
+                <a href="recyclingareas.html">Find E-Waste Recycling areas near you</a>
+            </div>
+            <div class="compartment maven-pro-header">
+                <a href="harmfulimpacts.html">Learn about the Harmful Impact of Electronic Pollution</a>
+            </div>
+            <div class="compartment maven-pro-header">
+                <a href="creativecrafts.html">Creative Crafts to do with old electronics</a>
+            </div>
+            <div class="compartment maven-pro-header">
+                <a href="communityevents.html">Find Community Recycling events near you</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

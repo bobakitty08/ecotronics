@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title class="maven-pro-header">Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sign Up Section -->
+    <div class="login-container">
+        <div class="welcome-text">
+            <h1 class="maven-pro-header">Create an Account</h1>
+        </div>
+        <div class="login-box">
+            <h2 class="maven-pro-header">Sign Up</h2>
+            <form id="signupForm">
+                <div class="input-group">
+                    <input type="text" id="username" required>
+                    <label for="username", class="maven-pro-button">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="signupEmail" required>
+                    <label for="signupEmail", class="maven-pro-button">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" required>
+                    <label for="signupPassword", class="maven-pro-button">Password</label>
+                </div>
+                <button type="submit", class="maven-pro-button">Sign Up</button>
+                <div class="error-message" id="signupErrorMessage"></div>
+            </form>
+            <p class="signup-link", class="maven-pro-button">Already have an account? <a href="index.html",class="maven-pro-button" >Sign In</a></p>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

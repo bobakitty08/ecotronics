@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Maven Pro', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .login-container, .homepage {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .carousel {
+            position: relative;
+            margin: 20px auto;
+            max-width: 600px; /* Center the carousel */
+        }
+        .carousel-images {
+            display: flex;
+            overflow: hidden;
+        }
+        .carousel-image {
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-images .active {
+            display: block;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .compartments {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .compartment {
+            flex: 1 1 calc(50% - 20px);
+            margin: 10px;
+            padding: 10px;
+            background-color: #5a8c6d;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .compartment:hover {
+            background-color: #4e7b5f;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 600px) {
+            .carousel-images {
+                flex-direction: column;
+            }
+            .carousel-image {
+                height: 300px;
+                object-fit: cover;
+            }
+            .prev, .next {
+                top: 90%;
+                transform: translateY(-90%);
+            }
+            .compartments {
+                flex-direction: column;
+            }
+            .compartment {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sign In Section -->
+    <div class="login-container" id="loginSection">
+        <div class="welcome-text">
+            <h1 class="maven-pro-header">Hello, welcome</h1>
+        </div>
+        <div class="login-box">
+            <h2 class="maven-pro-header">Sign In</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email" class="maven-pro-button">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password" class="maven-pro-button">Password</label>
+                </div>
+                <button type="submit" class="maven-pro-button">Login</button>
+                <div class="error-message" id="errorMessage"></div>
+            </form>
+            <p class="signup-link maven-pro-button">Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Home Page Section -->
+    <div class="homepage" id="homepageSection" style="display: none;">
+        <header>
+            <h1 class="maven-pro-header">Welcome to EcoTronics!</h1>
+            <p class="maven-pro-header">Start your eco-friendly journey right here with us!</p>
+        </header>
+
+        <!-- Image Carousel -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="app1.png" class="carousel-image active">
+                <img src="app2.jpg" class="carousel-image">
+                <img src="app3.jpg" class="carousel-image">
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Compartment Section -->
+        <div class="compartments">
+            <!-- Each compartment links to a new page -->
+            <div class="compartment maven-pro-header">
+                <a href="recyclingareas.html" style="color: white; text-decoration: none;">Find E-Waste Recycling areas near you</a>
+            </div>
+            <div class="compartment maven-pro-header">
+                <a href="harmfulimpacts.html" style="color: white; text-decoration: none;">Learn about the Harmful Impact of Electronic Pollution</a>
+            </div>
+            <div class="compartment maven-pro-header">
+                <a href="creativecrafts.html" style="color: white; text-decoration: none;">Creative Crafts to do with Old Electronics</a>
+            </div>
+            <div class="compartment maven-pro-header">
+                <a href="communityevents.html" style="color: white; text-decoration: none;">Find Electronic Repair Stores in NC</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

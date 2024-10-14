@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforming Old Electronics into Unique Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Maven Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Align content to the bottom */
+        }
+        body {
+            background: #f5f5dc;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-top: 50px; /* Add space above the title to push it down */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        .back-button {
+            position: absolute; /* Absolute positioning to control placement */
+            top: 40px; /* Distance from the top of the screen */
+            left: 280px; /* Distance from the left side of the screen */
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #5C3317;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        .back-button:hover {
+            background-color: #C4A484;
+        }
+        .flex-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Push content to the top */
+            height: 100vh; /* Ensure the content fills the height of the viewport */
+            padding-top: 50px; /* Create space above the content */
+            background-color: #f5f5dc;
+        }
+        .content {
+            margin-top: auto; /* Push the content to the bottom */
+        }
+        footer {
+            height: 100px; /* Adjust the height as needed for extra scrolling */
+            background-color: #f5f5dc; /* Match body and flex-wrapper background */
+        }
+    </style>
+</head>
+<body>
+    <!-- Go Back button at the top left -->
+    <a href="index.html#homepageSection" class="back-button">Go Back</a>
+    <div class="flex-wrapper">
+        <div class="container">
+            <article class="content">
+                <!-- Title -->
+                <h1 class="maven-pro-header">Transforming Old Circuits into Unique Art</h1>
+                <!-- Image below the title -->
+                <img src='data:image/jpeg;base64,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' alt="Art made from old electronics" class="img-fluid">
+                <!-- Paragraphs below the image -->
+                <p class="maven-pro-header">Discover how you can turn your old electronics into beautiful and functional pieces of art. From creating sculptures to crafting unique home decor, the possibilities are endless!</p>
+                <br>
+                <h3 class="maven-pro-header">Materials Needed:</h3>
+                <ul>
+                    <li class="maven-pro-header">Old circuit boards</li>
+                    <li class="maven-pro-header">Wires and cables</li>
+                    <li class="maven-pro-header">Broken devices (like old phones or computers)</li>
+                    <li class="maven-pro-header">Glue, paint, and other crafting supplies</li>
+                </ul>
+                <br>
+                <h3 class="maven-pro-header">Steps to Create Your Art:</h3>
+                <ol>
+                    <li class="maven-pro-header">Gather your materials and choose a concept for your artwork.</li>
+                    <li class="maven-pro-header">Disassemble the old electronics carefully.</li>
+                    <li class="maven-pro-header">Arrange the components in a visually appealing way.</li>
+                    <li class="maven-pro-header">Glue pieces together and paint as desired.</li>
+                    <li class="maven-pro-header">Display your new creation proudly!</li>
+                </ol>
+                <br>
+                <p class="maven-pro-header">Get creative and share your finished projects with the EcoTronics community!</p>
+
+            </article>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Crafts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .cards-section {
+            display: flex;
+            flex-direction: column; /* Align cards vertically */
+            align-items: center; /* Center cards horizontally */
+            gap: 20px; /* Space between cards */
+            margin: 20px; /* Optional: margin around the container */
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card h3 {
+            margin: 15px 0;
+            color: #333;
+        }
+        .card p {
+            padding: 0 15px;
+            font-size: 14px;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: #5a8c6d;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #4e7b5f;
+        }
+        /* Back button styling */
+        #backButton {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #2E8B57; /* Eco-friendly green */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        #backButton:hover {
+            background-color: #256b44;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 600px) {
+            #backButton {
+                position: static;
+                margin-bottom: 20px;
+                display: block;
+                text-align: center;
+            }
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back button -->
+    <a href="index.html#homepageSection" id="backButton">Go Back</a>
+    <section class="cards-section">
+        <div class="card">
+            <h3 class="maven-pro-header">DIY Robot from Old Circuit Boards</h3>
+            <p class="maven-pro-header">Transform old circuit boards into a cool DIY robot. A perfect craft for kids and tech enthusiasts alike.</p>
+            <a href="article1.html" class="btn">Read More</a>
+        </div>
+        <div class="card">
+            <h3 class="maven-pro-header">Vintage Lamp from an Old Hard Drive</h3>
+            <p class="maven-pro-header">Upcycle your old hard drive into a trendy vintage lamp. It's a unique addition to your room!</p>
+            <a href="article2.html" class="btn">Read More</a>
+        </div>
+        <div class="card">
+            <h3 class="maven-pro-header">Wall Art using Keyboard Keys</h3>
+            <p class="maven-pro-header">Make some modern wall art using keys from an old keyboard. Express your creativity!</p>
+            <a href="article3.html" class="btn">Read More</a>
+        </div>
+        <div class="card">
+            <h3 class="maven-pro-header">Portable Speaker from Old Phones</h3>
+            <p class="maven-pro-header">Turn old smartphones into portable speakers. A handy gadget for music lovers!</p>
+            <a href="article4.html" class="btn">Read More</a>
+        </div>
+    </section>
+</body>
+</html>

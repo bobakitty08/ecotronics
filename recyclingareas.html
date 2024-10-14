@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find E-Waste Recycling Areas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Maven Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #map {
+            height: 500px;
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        /* Back button styling */
+        #backButton {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #2E8B57; /* Eco-friendly green */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #backButton:hover {
+            background-color: #256b44;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="backButton" onclick="goHome()">Back</a>
+<!-- Back button added -->
+
+    <h1 class="maven-pro-button">Find E-Waste Recycling Areas</h1>
+    <p class="maven-pro-button">Below is a map showing nearby electronic recycling locations - take your pick!</p>
+
+    <div id="map"></div>
+
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            const centerLocation = {lat: 36.099861, lng: -80.244217}; // Centered on Winston-Salem
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: centerLocation,
+            });
+
+            // Define the locations of recycling centers
+            const locations = [
+                { lat: 36.136770, lng: -80.405550, name: "Forsyth County Recycling Center", address: "6328 Yadkinville Road, Pfafftown, NC"},
+                {lat: 36.080250, lng: -80.219320, name: "The 3RC EnviroStation", address: "1401 S Martin Luther King Jr Dr, Winston-Salem, NC"},
+                {lat: 35.959410, lng: -80.414080, name: "Bio-Green Services", address: "383 Potts Rd, Advance, NC"},
+                {lat: 36.09842, lng: -80.24441, name: "LoadUp Junk Removal", address: "1 W 4th St Suite 640, Winston-Salem, NC"},
+                {lat: 35.99248, lng: -80.05736, name: "Metal Monkeys Recycling", address: "1221 Westover Dr, High Point, NC"},
+                {lat: 36.36701, lng: -80.26564, name: "Stokes County Waste & Recycling Transfer", address: "2015 Sizemore Rd, Germanton, NC"},
+                {lat: 36.11908, lng: -80.67896, name: "Triad Recycling & Container Services", address: "2200 Memorial Rd, Yadkinville, NC"},
+            ];
+
+            // Create markers for each recycling center
+            locations.forEach(location => {
+                const marker = new google.maps.Marker({
+                    map: map,
+                    position: { lat: location.lat, lng: location.lng },
+                    title: location.name,
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<div><strong>${location.name}</strong><br>${location.address}</div>`,
+                });
+
+                marker.addListener("click", () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+    </script>
+    <script>
+        function goHome() {
+            // Simulate the action of going back to the homepage section
+            window.location.href = 'index.html#homepageSection';
+        }
+    </script>
+
+
+    <!-- Google Maps API with defer loading -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIMchLJdjqOmHtW3GoP5gITGaBjHzv8Fs&libraries=places&callback=initMap"
+        defer
+    ></script>
+</body>
+</html>

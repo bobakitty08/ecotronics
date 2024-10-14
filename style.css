@@ -1,0 +1,264 @@
+/* Global styles */
+.maven-pro-header {
+    font-family: "Maven Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.maven-pro-button {
+    font-family: "Maven Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Login Section */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f5dc, #e0d7c3); /* White-beige gradient */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.welcome-text h1 {
+    color: #333; /* Dark color for contrast */
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-box {
+    background-color: #fff; /* White background for the login box */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%; /* Make it responsive */
+    max-width: 400px; /* Control maximum width */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333; /* Dark color for contrast */
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-bottom: 2px solid #e0d7c3; /* Beige focus color */
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -5px;
+    font-size: 12px;
+    color: #e0d7c3; /* Beige color */
+}
+
+button {
+    background-color: #e0d7c3; /* Beige button color */
+    color: #333; /* Dark text color */
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d2c6b1; /* Slightly darker beige on hover */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #e0d7c3; /* Beige color for link */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.signup-link a:hover {
+    color: #d2c6b1; /* Darker beige on hover */
+}
+
+/* Home Page Section */
+.homepage {
+    text-align: center;
+    padding: 20px; /* Adjusted padding */
+}
+
+header {
+    margin-bottom: 20px; /* Reduced margin */
+}
+
+.compartments {
+    display: flex;
+    justify-content: center; /* Center compartments */
+    flex-wrap: wrap; /* Allow wrapping */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+.compartment {
+    flex: 1 1 150px; /* Allow compartments to grow and shrink */
+    height: 200px; /* Fixed height */
+    background-color: #e0d7c3; /* Beige color */
+    color: #333; /* Dark text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 10px; /* Reduced margin for better spacing */
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.compartment:hover {
+    background-color: #d2c6b1; /* Darker beige on hover */
+}
+
+/* Carousel styles */
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 20px auto; /* Center the carousel */
+    max-width: 600px; /* Control max width */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    max-height: 300px; /* Adjust height to make it smaller */
+    object-fit: cover; /* Fit the image without distorting it */
+    width: 100%; /* Full width of the carousel */
+    display: none;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+/* Carousel controls positioned below the image */
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Space between the image and buttons */
+}
+
+.prev,
+.next {
+    background-color: rgba(0, 0, 0, 0.5); /* Button background */
+    color: white; /* Button text color */
+    border: none;
+    padding: 10px 20px; /* Button padding */
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker button on hover */
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit;        /* Inherit the color from the parent element */
+}
+
+a:hover {
+    text-decoration: none; /* Prevent underline on hover */
+    color: #4CAF50;        /* Optional: Add a hover color (change as needed) */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%; /* Full width on smaller screens */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .compartments {
+        flex-direction: column; /* Stack compartments vertically */
+        align-items: center; /* Center items */
+    }
+
+    .compartment {
+        width: 80%; /* Full width for each compartment */
+        height: auto; /* Allow height to adjust */
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-text h1 {
+        font-size: 28px; /* Smaller font size for mobile */
+    }
+
+    button {
+        font-size: 14px; /* Smaller button text */
+    }
+
+    .signup-link {
+        font-size: 12px; /* Smaller link text */
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Eco-Friendly Events in North Carolina</title>
+    <style>
+        /* Page background color */
+        body {
+            background-color: #F5F5DC; /* Beige background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        /* Map container style */
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 40px; /* Moves the map lower on the page */
+        }
+        /* Title and description styling */
+        h1 {
+            margin-top: 20px;
+            font-size: 32px;
+            color: #2E8B57; /* Eco-friendly green color */
+        }
+        b {
+            font-size: 18px;
+            color: #555;
+            display: block;
+            margin-bottom: 20px;
+        }
+        /* Style for the back button */
+        #backButton {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #2E8B57; /* Matching the title's green */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        #backButton:hover {
+            background-color: #256b44; /* Darker green on hover */
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 600px) {
+            #backButton {
+                position: static;
+                margin-bottom: 20px;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html#homepageSection" id="backButton">Go Back</a>
+    <h1 class="maven-pro-header">Electronic Repair Stores</h1>
+    <b class="maven-pro-header">Before discarding your old electronics, consider taking them to a repair store and saving some money!</b>
+    <div id="map"></div>
+    <script>
+        // Initialize the map
+        function initMap() {
+            const ncLocation = { lat: 35.7596, lng: -79.0193 };  // Coordinates for North Carolina
+            // Create a map centered in North Carolina
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: ncLocation,
+                zoom: 7,
+            });
+            // Request for electronic repair stores using Places API
+            const service = new google.maps.places.PlacesService(map);
+            const request = {
+                location: ncLocation,
+                radius: '50000',  // Search within 50 km
+                keyword: 'electronic repair', // Search for repair stores
+            };
+            // Perform a nearby search for electronic repair stores
+            service.nearbySearch(request, function(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (let i = 0; i < results.length; i++) {
+                        createMarker(results[i], map);
+                    }
+                } else {
+                    console.error('Places API request failed: ' + status);
+                }
+            });
+        }
+        // Create markers for each place found
+        function createMarker(place, map) {
+            const marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location,
+                title: place.name,
+            });
+            // Info window to show place details
+            const infowindow = new google.maps.InfoWindow();
+            marker.addListener('click', () => {
+                infowindow.setContent(`<h3>${place.name}</h3><p>${place.vicinity}</p>`);
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
+    <!-- Load the Google Maps and Places API scripts -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSsSGDl2p7DNGI-NaZkAp0lkQwbMNBzpk&libraries=places&callback=initMap"></script>
+</body>
+</html>
